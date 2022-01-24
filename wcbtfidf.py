@@ -15,8 +15,9 @@ class Wcbtfidf:
 
         label_dict = y.value_counts(normalize=True).to_dict()
         for key, val in label_dict.items():
-            new_val = int(np.round(val, 1) * self.max_features)
+            new_val = int(np.round(val* self.max_features,1))
             label_dict[key] = new_val
+         
 
         self.combine_vocab = self.return_total_vocab(X, y, label_dict)
         self.final_tfidf = TfidfVectorizer(vocabulary=self.combine_vocab, stop_words='english')
