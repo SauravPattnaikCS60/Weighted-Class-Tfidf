@@ -1,4 +1,4 @@
-# Weighted-Class-Based-Tfidf
+# Weighted-Class-Tfidf
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)[![ForTheBadgebuilt-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/SauravPattnaikCS60/Weighted-Class-Based-Tfidf)
 
 ## Inspiration behind WCBTFIDF
