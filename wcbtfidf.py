@@ -47,12 +47,15 @@ class Wcbtfidf:
 
         total_vocab = []
         for key, val in label_dict.items():
-            slice_data = X[y == key]
-            tfidf = TfidfVectorizer(max_features=val, stop_words=exclude)
-            tfidf.fit(slice_data)
-            vocab = list(tfidf.vocabulary_.keys())
-            total_vocab.extend(vocab)
-            exclude.extend(vocab)
-            self.class_wise_vocab[key] = vocab
+            if val != 0:
+                slice_data = X[y == key]
+                tfidf = TfidfVectorizer(max_features=val, stop_words=exclude)
+                tfidf.fit(slice_data)
+                vocab = list(tfidf.vocabulary_.keys())
+                total_vocab.extend(vocab)
+                exclude.extend(vocab)
+                self.class_wise_vocab[key] = vocab
+            else:
+                self.class_wise_vocab[key] = []
 
         return total_vocab

@@ -4,3 +4,4 @@ demos/.ipynb_checkpoints/
 __pycache__/
 demos/__pycache__/
 demos/*.csv
+demos/Graph.ipynb
