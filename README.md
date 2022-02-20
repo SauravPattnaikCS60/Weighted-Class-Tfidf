@@ -42,3 +42,10 @@ to the features chosen by standard tfidf model._
 In the experiments conducted, wcbtfidf performed better than standard tfidf models. The results have been put
 into a notebook under the _demos_ folder.
 
+## Data Sources
+
+IMDB Dataset : (https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+
+Toxic Classification Dataset : (https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
+
+Sentiment140 Dataset : (https://www.kaggle.com/kazanova/sentiment140)
