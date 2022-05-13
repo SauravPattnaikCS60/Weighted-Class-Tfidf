@@ -49,3 +49,6 @@ IMDB Dataset : (https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie
 Toxic Classification Dataset : (https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
 
 Sentiment140 Dataset : (https://www.kaggle.com/kazanova/sentiment140)
+
+
+## Article Link(https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
