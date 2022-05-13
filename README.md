@@ -51,4 +51,5 @@ Toxic Classification Dataset : (https://www.kaggle.com/c/jigsaw-toxic-comment-cl
 Sentiment140 Dataset : (https://www.kaggle.com/kazanova/sentiment140)
 
 
-## Article Link(https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
+## Article Link 
+Click here(https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
