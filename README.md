@@ -44,12 +44,12 @@ into a notebook under the _demos_ folder.
 
 ## Data Sources
 
-IMDB Dataset : (https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
+[IMDB Dataset](https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
-Toxic Classification Dataset : (https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
+[Toxic Classification Dataset](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data)
 
-Sentiment140 Dataset : (https://www.kaggle.com/kazanova/sentiment140)
+[Sentiment140 Dataset](https://www.kaggle.com/kazanova/sentiment140)
 
 
 ## Article Link 
-Click here(https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
+[Click here](https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
