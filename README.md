@@ -53,3 +53,19 @@ into a notebook under the _demos_ folder.
 
 ## Article Link 
 [Click here](https://www.deepwizai.com/projects/how-to-correctly-use-tf-idf-with-imbalanced-data)
+
+## Tutorial
+```python
+# Import the class
+from wcbtfidf import Wcbtfidf
+# Initialize the object
+wcbtfidf = Wcbtfidf(max_features=100)
+# Fit on the training set
+wcbtfidf.fit(xtrain,ytrain)
+# Transform on the test set
+test_df = wcbtfidf.transform(xtest)
+# Get the vocab
+wcbtfidf.combine_vocab
+# Get the class wise vocab
+wcbtfidf.class_wise_vocab
+```
