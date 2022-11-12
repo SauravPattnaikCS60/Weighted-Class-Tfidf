@@ -5,27 +5,44 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Wcbtfidf:
 
-    def __init__(self, max_features):
+    def __init__(self, max_features,custom_weights=None):
         self.max_features = max_features
         self.combine_vocab = []
         self.class_wise_vocab = {}
         self.final_tfidf = None
+        self.label_dict = custom_weights
 
     def fit(self, X, y):
 
-        label_dict = y.value_counts(normalize=True).to_dict()
-        for key, val in label_dict.items():
-            new_val = int(np.round(val* self.max_features,1))
-            label_dict[key] = new_val
-         
+        if not isinstance(y,pd.Series):
+            y = pd.Series(y)
 
-        self.combine_vocab = self.return_total_vocab(X, y, label_dict)
+        if not isinstance(X,pd.Series):
+            X = pd.Series(X)
+
+        if self.label_dict == None:
+            self.label_dict = y.value_counts(normalize=True).to_dict()
+            for key, val in self.label_dict.items():
+                new_val = int(np.round(val* self.max_features,1))
+                self.label_dict[key] = new_val
+
+        elif len(self.label_dict.keys()) != y.nunique():
+            raise ValueError("Custom weights keys and number of unique labels should match")
+
+        elif np.sum(list(self.label_dict.values())) != self.max_features:
+            raise ValueError("Sum of custom weights and max features do not match")
+
+        else:
+            pass
+
+
+        self.combine_vocab = self.return_total_vocab(X, y, self.label_dict)
         self.final_tfidf = TfidfVectorizer(vocabulary=self.combine_vocab, stop_words='english')
         self.final_tfidf.fit(X)
 
     def transform(self, X):
         transformed_data = self.final_tfidf.transform(X)
-        transformed_data = pd.DataFrame(transformed_data.toarray(), columns=self.combine_vocab)
+        transformed_data = pd.DataFrame(transformed_data.toarray(), columns=self.final_tfidf.get_feature_names_out())
         return transformed_data
 
     def return_total_vocab(self, X, y, label_dict):
@@ -51,7 +68,7 @@ class Wcbtfidf:
                 slice_data = X[y == key]
                 tfidf = TfidfVectorizer(max_features=val, stop_words=exclude)
                 tfidf.fit(slice_data)
-                vocab = list(tfidf.vocabulary_.keys())
+                vocab = list(tfidf.get_feature_names_out())
                 total_vocab.extend(vocab)
                 exclude.extend(vocab)
                 self.class_wise_vocab[key] = vocab

@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='Weighted Class Tfidf',
-    version='1.0.0',
+    version='1.0.3',
     author='Saurav Pattnaik',
     description='Custom implementation of tfidf for imbalanced datasets',
     long_description=long_description,

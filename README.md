@@ -68,4 +68,10 @@ test_df = wcbtfidf.transform(xtest)
 wcbtfidf.combine_vocab
 # Get the class wise vocab
 wcbtfidf.class_wise_vocab
+
+# Added support for providing custom features set
+wcbtfidf = Wcbtfidf(max_features=100,custom_weights={0:20,1:80}) # This lets you manage how many features you want to assign
+
+# Here xtrain,xtest refers to a single pandas column containing the text data and ytrain ytest the
+# categorical output label
 ```
